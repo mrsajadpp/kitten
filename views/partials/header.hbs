@@ -1,0 +1,108 @@
+<style>
+    .header {
+        width: 100%;
+        height: 70px;
+        display: flex;
+        flex-direction: row;
+        background-color: #060002;
+        position: fixed;
+        top: 0px;
+        z-index: 777;
+    }
+
+    .header .hleft {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        padding-left: 10px;
+    }
+
+    .header .hleft a img {
+        width: 100px;
+    }
+
+    .header .hright {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .header .hright nav {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+    }
+
+    .header .hright button {
+        width: 80px;
+        height: 100%;
+        border: none;
+        background: transparent;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+</style>
+<div class="header">
+    <div class="hleft">
+        <a href="">
+            <img src="/img/KITTEN.png" alt="Kitten a indian social media website.">
+        </a>
+    </div>
+    <div class="hright">
+        <nav>
+            <a href="/" class="deskmenu">
+                <button>
+                    {{#contains "home" page}}
+                    <box-icon type="solid" name='home' color="#6fbf7e"></box-icon>
+                    {{else}}
+                    <box-icon type="solid" name='home' color="#fff"></box-icon>
+                    {{/contains}}
+                </button>
+            </a>
+            <a id="searchBtn">
+                <button>
+                    <box-icon name='search' color="#fff"></box-icon>
+                </button>
+            </a>
+            <a href="/messages" class="deskmenu">
+                <button>
+                    {{#contains "messages" page}}
+                    <box-icon type="solid" name='message-square-dots' color="#6fbf7e"></box-icon>
+                    {{else}}
+                    <box-icon type="solid" name='message-square-dots' color="#fff"></box-icon>
+                    {{/contains}}
+                </button>
+            </a>
+            <a href="/notifications" class="deskmenu">
+                <button>
+                    {{#contains "notifications" page}}
+                    <box-icon name='bell' type='solid' color="#6fbf7e"></box-icon>
+                    {{else}}
+                    <box-icon name='bell' type='solid' color="#fff"></box-icon>
+                    {{/contains}}
+                </button>
+            </a>
+            <a href="/profile" class="deskmenu">
+                <button>
+                    {{#contains "user" page}}
+                    <box-icon name='user' color="#6fbf7e"></box-icon>
+                    {{else}}
+                    <box-icon name='user' color="#fff"></box-icon>
+                    {{/contains}}
+                </button>
+            </a>
+            <a href="" class="deskmenu">
+                <button>
+                    <box-icon name='plus' color="#fff"></box-icon>
+                </button>
+            </a>
+        </nav>
+    </div>
+</div>

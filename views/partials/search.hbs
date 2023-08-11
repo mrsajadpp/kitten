@@ -1,0 +1,99 @@
+<style>
+    .search-container {
+        position: fixed;
+        top: -100vh;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: #0e0e0e;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+        z-index: 888;
+        transition: top 0.3s ease-in-out;
+    }
+
+    .search-container.active {
+        top: 0px;
+    }
+
+    .searchdiv {
+        width: 100%;
+        height: 60px;
+        display: flex;
+        background-color: #0e0e0e;
+    }
+
+    .searchdiv button {
+        width: 80px;
+        height: 100%;
+        border: none;
+        outline: none;
+        background: transparent;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .searchdiv input {
+        width: 100%;
+        height: 100%;
+        border: none;
+        outline: none;
+        padding-left: 10px;
+        background-color: transparent;
+        color: #6fbf7e;
+        border-bottom: 1px #6fbf7e solid;
+    }
+
+    .suggestions {
+        list-style: none;
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        padding: 0px;
+    }
+
+    .suggestions li {
+        width: 100%;
+        height: 60px;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        border-top: 1px solid #15202a;
+        border-bottom: 1px solid #15202a;
+        padding: 20px;
+    }
+</style>
+<div class="search-container" id="searchContainer">
+    <form class="searchdiv" action="/search" method="get">
+        <button id="backbtn" type="button">
+            <box-icon type='solid' name='chevron-left' color="#6fbf7e"></box-icon>
+        </button>
+        <input type="text" placeholder="Search" name="q" autocomplete="off">
+        <button type="submit">
+            <box-icon name='search' color="#6fbf7e"></box-icon>
+        </button>
+    </form>
+    <ul class="suggestions">
+        <li onclick="location.href = '/search?q=who+is+sajad?'"><box-icon name='trending-up'
+                color="#6fbf7e"></box-icon>&nbsp;Who is sajad?</li>
+        <li onclick="location.href = '/search?q=who+is+bavin?'"><box-icon name='trending-up'
+                color="#6fbf7e"></box-icon>&nbsp;Who is bavin?</li>
+        <li onclick="location.href = '/search?q=chandrayan+3'"><box-icon name='trending-up'
+                color="#6fbf7e"></box-icon>&nbsp;Chandrayan 3</li>
+    </ul>
+</div>
+<script>
+    const searchBtn = document.getElementById('searchBtn');
+    const backBtn = document.getElementById('backbtn');
+    const searchContainer = document.getElementById('searchContainer');
+
+    backBtn.addEventListener('click', () => {
+        searchContainer.classList.toggle('active');
+    });
+
+    searchBtn.addEventListener('click', () => {
+        searchContainer.classList.toggle('active');
+    });
+</script>
